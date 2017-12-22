@@ -13,7 +13,7 @@ function anagrams(word, words) {
     })
 }
 
-方法三：
+方法三： 
 var results = [];
 var wordSort = sortStr(word);
 for(var i = 0; i < words.length; i++){
