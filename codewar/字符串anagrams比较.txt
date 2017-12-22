@@ -1,0 +1,39 @@
+anagrams就是一组相同的字母组成不一样的字符串。题目要求就是比较anagrams。
+
+方法一：
+function anagrams(word, words) {
+  word = word.split('').sort().join('');
+  return words.filter(function(v) {return word == v.split('').sort().join('');});
+}
+
+方法二：
+function anagrams(word, words) {
+    return words.filter(function (e) {
+        return e.split('').sort().join('') === word.split('').sort().join('');
+    })
+}
+
+方法三：
+var results = [];
+var wordSort = sortStr(word);
+for(var i = 0; i < words.length; i++){
+  if(wordSort == sortStr(words[i])){
+    results.push(words[i]);
+  }
+}
+function sortStr(str){
+    var tmp = str.split('');
+    tmp.sort(sorting);
+    return tmp.join('');
+}
+
+function sorting(a, b){
+    if(a > b){
+        return 1;
+    }else if(a < b){
+        return -1;
+    }else{
+        return 0;
+    }
+}
+return results;
