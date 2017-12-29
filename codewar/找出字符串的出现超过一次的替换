@@ -1,0 +1,21 @@
+Duplicate Encoder
+
+输入一个字符串如果该字母超过一次则输出'（',否则输出'）'
+
+function duplicateEncode(word){
+   
+    var unique='';
+    word = word.toLowerCase();
+    for(var i=0; i<word.length; i++){
+        if(word.lastIndexOf(word[i]) == word.indexOf(word[i])){
+            unique += '(';
+        }
+        else{
+            unique += ')';
+        }
+    }
+    return unique;
+
+}
+
+note:indexOf是查找元素第一次出现的位置的索引；lastIndexOf是查找元素最后一次出现的位置。
